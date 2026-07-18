@@ -112,8 +112,7 @@ const createCourse = async (req, res) => {
 // ==========================================
 const updateCourse = async (req, res) => {
 
-  const courseCode = req.params.id;
-
+  const courseId = new ObjectId(req.params.id);
   const course = {
     courseCode: req.body.courseCode,
     courseName: req.body.courseName,
@@ -146,13 +145,13 @@ const updateCourse = async (req, res) => {
       .db('StudentManagementDB')
       .collection('courses')
       .replaceOne(
-        { courseCode: courseCode },
-        course
-      );
+  { _id: courseId },
+  course
+);
 
-    if (response.modifiedCount > 0) {
-      return res.status(204).send();
-    }
+    if (response.matchedCount > 0) {
+    return res.status(204).send();
+}
 
     res.status(404).json({
       message: 'Course not found.'
@@ -173,16 +172,15 @@ const deleteCourse = async (req, res) => {
 
   try {
 
-    const courseCode = req.params.id;
+    const courseId = new ObjectId(req.params.id);
 
     const response = await mongodb
       .getDb()
       .db('StudentManagementDB')
       .collection('courses')
       .deleteOne({
-        courseCode: courseCode
-      });
-
+  _id: courseId
+});
     if (response.deletedCount > 0) {
       return res.status(200).json({
         message: 'Course deleted successfully.'

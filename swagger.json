@@ -5,10 +5,10 @@
     "description": "API documentation for the Student Management API",
     "version": "1.0.0"
   },
-  "host": "localhost:8000",
+  "host": "student-management-api-t4kj.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {

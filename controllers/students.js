@@ -124,7 +124,7 @@ const createStudent = async (req, res) => {
 const updateStudent = async (req, res) => {
   try {
 
-    const studentId = req.params.id;
+    const studentId = new ObjectId(req.params.id);
 
     const student = {
       studentId: req.body.studentId,
@@ -164,14 +164,12 @@ const updateStudent = async (req, res) => {
       .db('StudentManagementDB')
       .collection('students')
       .replaceOne(
-        { studentId: studentId },
-        student
-      );
-
-    if (response.modifiedCount > 0) {
-      return res.status(204).send();
-    }
-
+  { _id: studentId },
+  student
+);
+if (response.matchedCount > 0) {
+    return res.status(204).send();
+}
     res.status(404).json({
       message: 'Student not found.'
     });
@@ -191,15 +189,15 @@ const updateStudent = async (req, res) => {
 const deleteStudent = async (req, res) => {
   try {
 
-    const studentId = req.params.id;
+    const studentId = new ObjectId(req.params.id);
 
     const response = await mongodb
       .getDb()
       .db('StudentManagementDB')
       .collection('students')
       .deleteOne({
-        studentId: studentId
-      });
+  _id: studentId
+});
 
     if (response.deletedCount > 0) {
       return res.status(200).json({
