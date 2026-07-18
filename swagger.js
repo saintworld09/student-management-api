@@ -5,8 +5,8 @@ const doc = {
     title: 'Student Management API',
     description: 'API documentation for the Student Management API'
   },
-  host: 'localhost:8000',
-  schemes: ['http']
+  host: 'student-management-api-t4kj.onrender.com',
+  schemes: ['https']
 };
 
 const outputFile = './swagger.json';
