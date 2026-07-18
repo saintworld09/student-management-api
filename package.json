@@ -1,0 +1,34 @@
+{
+  "name": "student-management-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saintworld09/student-management-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/saintworld09/student-management-api/issues"
+  },
+  "homepage": "https://github.com/saintworld09/student-management-api#readme",
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "mongodb": "^7.5.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

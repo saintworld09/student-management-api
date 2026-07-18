@@ -1,0 +1,86 @@
+### Home
+GET http://localhost:8000/
+
+###
+
+### Get All Students
+GET http://localhost:8000/students
+
+###
+
+### Get One Student
+GET http://localhost:8000/students/PASTE_A_REAL_ID_HERE
+
+###
+
+### Create Student
+POST http://localhost:8000/students
+Content-Type: application/json
+
+{
+    "studentId": "STU006",
+    "firstName": "Joshua",
+    "lastName": "Feranmi",
+    "gender": "Male",
+    "email": "joshua@gmail.com",
+    "phone": "08045678912",
+    "department": "Software Development",
+    "level": "200",
+    "dateOfBirth": "2003-08-14",
+    "address": "Ogun State",
+    "enrollmentDate": "2026-01-10"
+}
+
+### Update Student
+PUT http://localhost:8000/students/STU006
+Content-Type: application/json
+
+{
+    "studentId": "STU006",
+    "firstName": "Joshua",
+    "lastName": "Adeyemi",
+    "gender": "Male",
+    "email": "joshua@gmail.com",
+    "phone": "08045678912",
+    "department": "Software Development",
+    "level": "300",
+    "dateOfBirth": "2003-08-14",
+    "address": "Lagos",
+    "enrollmentDate": "2026-01-10"
+}
+
+### Delete Student
+DELETE http://localhost:8000/students
+
+
+### Create Course
+POST http://localhost:8000/courses
+Content-Type: application/json
+
+{
+  "courseCode": "CSC301",
+  "courseName": "Database Systems",
+  "instructor": "Dr. James Wilson",
+  "creditHours": 3,
+  "semester": "First",
+  "department": "Computer Science",
+  "maxStudents": 60
+}
+
+
+### Update Course
+PUT http://localhost:8000/courses/CSC301
+Content-Type: application/json
+
+{
+  "courseCode": "CSC301",
+  "courseName": "Advanced Database Systems",
+  "instructor": "Dr. James Wilson",
+  "creditHours": 4,
+  "semester": "Second",
+  "department": "Computer Science",
+  "maxStudents": 80
+}
+
+### Delete Course
+DELETE http://localhost:8000/courses/CSC301
