@@ -14,24 +14,39 @@ const validateStudent = [
     .notEmpty()
     .withMessage('Last name is required.'),
 
+  body('gender')
+    .notEmpty()
+    .withMessage('Gender is required.'),
+
   body('email')
     .isEmail()
     .withMessage('Please provide a valid email.'),
 
-  body('course')
+  body('phone')
     .notEmpty()
-    .withMessage('Course is required.'),
+    .withMessage('Phone number is required.'),
+
+  body('department')
+    .notEmpty()
+    .withMessage('Department is required.'),
 
   body('level')
     .notEmpty()
     .withMessage('Level is required.'),
 
-  body('gpa')
-    .isFloat({ min: 0, max: 5 })
-    .withMessage('GPA must be between 0 and 5.'),
+  body('dateOfBirth')
+    .notEmpty()
+    .withMessage('Date of birth is required.'),
+
+  body('address')
+    .notEmpty()
+    .withMessage('Address is required.'),
+
+  body('enrollmentDate')
+    .notEmpty()
+    .withMessage('Enrollment date is required.'),
 
   (req, res, next) => {
-
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -41,7 +56,6 @@ const validateStudent = [
     }
 
     next();
-
   }
 
 ];

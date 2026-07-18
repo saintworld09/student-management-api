@@ -58,13 +58,13 @@ POST http://localhost:8000/courses
 Content-Type: application/json
 
 {
-  "courseCode": "CSC301",
-  "courseName": "Database Systems",
-  "instructor": "Dr. James Wilson",
-  "creditHours": 3,
+  "courseCode": "CSC404",
+  "courseName": "Data Analytcs",
+  "instructor": "Dr. John Wisdson",
+  "creditHours": 4,
   "semester": "First",
   "department": "Computer Science",
-  "maxStudents": 60
+  "maxStudents": 75
 }
 
 
